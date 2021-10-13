@@ -58,5 +58,33 @@ mod tests {
     use crate::solution::Solution;
 
     #[test]
-    fn s002() {}
+    fn s002() {
+        assert_eq!(
+            to_linked_list(vec![7, 0, 8]),
+            Solution::add_two_numbers(to_linked_list(vec![2, 4, 3]), to_linked_list(vec![5, 6, 4]))
+        );
+        assert_eq!(
+            to_linked_list(vec![0]),
+            Solution::add_two_numbers(to_linked_list(vec![0]), to_linked_list(vec![0]))
+        );
+        assert_eq!(
+            to_linked_list(vec![8, 9, 9, 9, 0, 0, 0, 1]),
+            Solution::add_two_numbers(
+                to_linked_list(vec![9, 9, 9, 9, 9, 9, 9]),
+                to_linked_list(vec![9, 9, 9, 9])
+            )
+        );
+    }
+
+    fn to_linked_list(vec: Vec<i32>) -> Option<Box<ListNode>> {
+        let mut current = None;
+        for &val in vec.iter().rev() {
+            let node = ListNode {
+                val: val,
+                next: current,
+            };
+            current = Some(Box::new(node));
+        }
+        current
+    }
 }
