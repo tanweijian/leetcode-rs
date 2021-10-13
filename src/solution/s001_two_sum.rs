@@ -21,7 +21,7 @@ impl Solution {
 
 #[cfg(test)]
 mod tests {
-    use crate::solution;
+    use crate::solution::Solution;
 
     #[test]
     fn s001() {
