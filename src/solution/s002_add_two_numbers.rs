@@ -60,18 +60,21 @@ mod tests {
     #[test]
     fn s002() {
         assert_eq!(
-            ListNode::from(vec![7, 0, 8]),
-            Solution::add_two_numbers(ListNode::from(vec![2, 4, 3]), ListNode::from(vec![5, 6, 4]))
-        );
-        assert_eq!(
-            ListNode::from(vec![0]),
-            Solution::add_two_numbers(ListNode::from(vec![0]), ListNode::from(vec![0]))
-        );
-        assert_eq!(
-            ListNode::from(vec![8, 9, 9, 9, 0, 0, 0, 1]),
+            ListNode::from(&vec![7, 0, 8]),
             Solution::add_two_numbers(
-                ListNode::from(vec![9, 9, 9, 9, 9, 9, 9]),
-                ListNode::from(vec![9, 9, 9, 9])
+                ListNode::from(&vec![2, 4, 3]),
+                ListNode::from(&vec![5, 6, 4])
+            )
+        );
+        assert_eq!(
+            ListNode::from(&vec![0]),
+            Solution::add_two_numbers(ListNode::from(&vec![0]), ListNode::from(&vec![0]))
+        );
+        assert_eq!(
+            ListNode::from(&vec![8, 9, 9, 9, 0, 0, 0, 1]),
+            Solution::add_two_numbers(
+                ListNode::from(&vec![9, 9, 9, 9, 9, 9, 9]),
+                ListNode::from(&vec![9, 9, 9, 9])
             )
         );
     }

@@ -5,7 +5,7 @@ pub struct ListNode {
 }
 
 impl ListNode {
-    pub fn from(vec: Vec<i32>) -> Option<Box<ListNode>> {
+    pub fn from(vec: &Vec<i32>) -> Option<Box<ListNode>> {
         let mut current = None;
         for &val in vec.iter().rev() {
             let node = ListNode {
