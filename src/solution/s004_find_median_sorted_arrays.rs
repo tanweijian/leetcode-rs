@@ -13,3 +13,20 @@ impl Solution {
         }
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use crate::solution::Solution;
+
+    #[test]
+    fn s004() {
+        assert_eq!(
+            2_f64,
+            Solution::find_median_sorted_arrays(vec![1, 3], vec![2])
+        );
+        assert_eq!(
+            2.5_f64,
+            Solution::find_median_sorted_arrays(vec![1, 2], vec![3, 4])
+        );
+    }
+}
